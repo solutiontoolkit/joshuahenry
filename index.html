@@ -2,20 +2,69 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#15151a">
 <title>Joshua Henry, STK-X | Full Stack Developer & Data Analyst</title>
 <meta name="description" content="Joshua Henry (STK-X), full stack developer and data analyst based in Delta, Nigeria. Web apps, dashboards and data tools built to spec.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://komestk.vercel.app/">
+
+<!-- Google Search Console verification.
+     1) In Search Console choose Add property > URL prefix > https://komestk.vercel.app/
+     2) Pick the "HTML tag" method and copy the tag Google shows you
+     3) Replace the whole line below with that tag, then deploy and click Verify -->
+<!-- <meta name="google-site-verification" content="PASTE-YOUR-CODE-HERE"> -->
+
 <link rel="icon" href="assets/favicon.ico">
 <link rel="apple-touch-icon" href="assets/kome_stk.png">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://komestk.vercel.app/">
+<meta property="og:site_name" content="STK-X">
 <meta property="og:title" content="Joshua Henry, STK-X | Full Stack Developer & Data Analyst">
 <meta property="og:description" content="Full stack developer and data analyst based in Delta, Nigeria. Web apps, dashboards and data tools built to spec.">
-<meta property="og:image" content="assets/kome_stk.png">
+<meta property="og:image" content="https://komestk.vercel.app/assets/kome_stk.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Joshua Henry, STK-X Full Stack Developer & Data Analyst">
 <meta name="twitter:description" content="Full stack developer and data analyst based in Delta, Nigeria. Web apps, dashboards and data tools built to spec.">
-<meta name="twitter:image" content="assets/kome_stk.png">
+<meta name="twitter:image" content="https://komestk.vercel.app/assets/kome_stk.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono&display=swap">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://komestk.vercel.app/#website",
+      "url": "https://komestk.vercel.app/",
+      "name": "Joshua Henry, STK-X",
+      "alternateName": ["STK-X", "Kome STK"],
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://komestk.vercel.app/#person",
+      "name": "Joshua Henry",
+      "alternateName": "STK-X",
+      "url": "https://komestk.vercel.app/",
+      "image": "https://komestk.vercel.app/assets/kome_stk.png",
+      "jobTitle": "Full Stack Developer & Data Analyst",
+      "description": "Full stack developer and data analyst based in Delta, Nigeria. Web apps, dashboards and data tools built to spec.",
+      "address": { "@type": "PostalAddress", "addressRegion": "Delta", "addressCountry": "NG" },
+      "knowsAbout": ["Web development", "Flask", "Python", "JavaScript", "SQL", "Power BI", "Data analysis", "Dashboards"],
+      "sameAs": [
+        "https://github.com/solutiontoolkit",
+        "https://www.linkedin.com/in/joshua-henry-47644a325/",
+        "https://twitter.com/joshuahenr3593",
+        "https://facebook.com/komestk",
+        "https://www.youtube.com/@stkome"
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -34,26 +83,27 @@
       <a href="#contact">Contact</a>
     </nav>
     <a href="#contact" class="topbar-cta">Start a project</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
-      <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M0 1H18M0 7H18M0 13H18" stroke="currentColor" stroke-width="1.5"/></svg>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
     </button>
   </div>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
+<nav class="mobile-menu" id="mobileMenu" aria-label="Main menu" aria-hidden="true">
   <a href="#about">About</a>
   <a href="#toolkit">Toolkit</a>
   <a href="#work">Work</a>
   <a href="#videos">Videos</a>
   <a href="#contact">Contact</a>
-</div>
+  <a href="#contact" class="mobile-menu-cta">Start a project</a>
+</nav>
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
   <div class="wrap hero-reveal">
     <div class="hero-copy">
       <div class="hero-eyebrow"><span class="dot"></span> Open for freelance &amp; contract work</div>
-      <h1>Joshua Henry builds<br>web tools that<br>hold up under use.</h1>
+      <h1>Joshua Henry builds <br>web tools that <br>hold up under use.</h1>
       <div class="role-line">&gt; <span id="roleText"></span><span class="cursor">_</span></div>
       <p class="lede">Full stack developer and data analyst working under the STK-X toolkit. I design, build and ship web applications, dashboards and automation tools for small teams and independent brands.</p>
       <div class="hero-ctas">

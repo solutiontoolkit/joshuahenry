@@ -3,11 +3,28 @@
 // ---------- Mobile menu ----------
 var menuBtn = document.getElementById('menuBtn');
 var mobileMenu = document.getElementById('mobileMenu');
-menuBtn.addEventListener('click', function () { mobileMenu.classList.toggle('open'); });
+var desktopNav = window.matchMedia('(min-width: 901px)'); // keep in sync with the CSS breakpoint
+
+function setMenu(open) {
+  mobileMenu.classList.toggle('open', open);
+  document.body.classList.toggle('menu-open', open);   // locks page scroll behind the menu
+  menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  mobileMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
+}
+menuBtn.addEventListener('click', function () { setMenu(!mobileMenu.classList.contains('open')); });
+
 var mobileMenuLinks = mobileMenu.querySelectorAll('a');
 for (var m = 0; m < mobileMenuLinks.length; m++) {
-  mobileMenuLinks[m].addEventListener('click', function () { mobileMenu.classList.remove('open'); });
+  mobileMenuLinks[m].addEventListener('click', function () { setMenu(false); });
 }
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && mobileMenu.classList.contains('open')) { setMenu(false); menuBtn.focus(); }
+});
+// Rotating a phone or resizing past the breakpoint must never leave the menu open or the page scroll-locked
+function onBreakpoint(e) { if (e.matches) setMenu(false); }
+if (desktopNav.addEventListener) { desktopNav.addEventListener('change', onBreakpoint); }
+else if (desktopNav.addListener) { desktopNav.addListener(onBreakpoint); }
 
 // ---------- Role rotator (plain text swap, no blinking-cursor gimmick beyond a static caret) ----------
 const roles = ['building web apps', 'analyzing data', 'designing dashboards', 'shipping products'];
@@ -29,13 +46,13 @@ tick();
 const topbar = document.getElementById('topbar');
 window.addEventListener('scroll', () => {
   topbar.style.boxShadow = window.scrollY > 20 ? '0 1px 0 rgba(0,0,0,0.4)' : 'none';
-});
+}, { passive: true });
 
 // ---------- Back to top ----------
 const backTop = document.getElementById('backTop');
 window.addEventListener('scroll', () => {
   backTop.classList.toggle('show', window.scrollY > 600);
-});
+}, { passive: true });
 backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 // ---------- Project filter ----------
@@ -60,7 +77,7 @@ for (var f = 0; f < filterBtns.length; f++) {
 // The thumbnail and link are built automatically, so updating this list
 // is the only step needed each time a new video goes live.
 const videos = [
-  { id: '', title: 'Add your first video ID in script.js' },
+  { id: '_W0rEDUKLnM', title: 'COMPANY WEBSITE LAUNCH' },
   { id: '', title: 'Add your second video ID in script.js' },
   { id: '', title: 'Add your third video ID in script.js' }
 ];
